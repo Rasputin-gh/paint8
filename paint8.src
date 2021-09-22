@@ -1,0 +1,14 @@
+
+canvas={}
+  canvas.notification=""
+  canvas.palette=["000000","ffffff","ff0000","00ff00", "0000ff"]
+  canvas.parse_command = function(cmd)
+    exit("Not Implemented")
+    end function
+  canvas.init = function()
+    exit("Not Implemented")
+    end function
+  canvas.render = function()
+    exit("Not Implemented")
+    end function
+  

@@ -1,0 +1,27 @@
+image={}
+  image.metadata={"title":"","height":16,"width":8,"created":null,"plock":false,"palette":[]}
+  image.layers=[]
+  image.draw_cmds=[]
+  image.save=function(draw_cmds, height, width, layers=[1,1,1] title="Untitled", filename="image_%d")
+    exit("NotImplemented")
+    end function
+  image.load=function(filepath)
+    comp=get_shell.host_computer
+    ldfile=comp.File(filepath)
+    if ldfile==null then return "ERROR: File at:" + filepath + " not found"
+    imgData=ldfile.get_content.split("\n")
+    if imgData.len < 3 then return "ERROR: Invalid or corrupt p8 image file"
+    respImg = new image
+    metadata=respImg[0].split(",")
+    if metadata.len < 4 then return "ERROR: p8 image file has corrupted metadata"
+    title=metadata[0]
+    height=metadata[1].to_int
+    width=metadata[2].to_int
+    palette=respImage[1].split(",")
+    layers=respIMage[2].split(",")
+    drawCmds=respImage[3]
+    respImg.metadata={"title":title,"height":height,"width":width,"palette":palette}
+    respImg.layers=layers
+    respImg.draw_cmds=drawCmds
+    return respImg
+    end function
